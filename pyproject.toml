@@ -1,0 +1,37 @@
+# pyproject.toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "your-package-name"          # what appears on PyPI, etc.
+version = "0.1.0"
+description = "Short description of what this does"
+readme = "README.md"
+requires-python = ">=3.9"
+
+# Author info (optional but nice)
+authors = [
+  { name = "Patrick Woitschig", email = "patrick@example.com" }
+]
+
+# Dependencies that get installed with your package
+dependencies = [
+  "numpy",
+  "pandas",
+  # "matplotlib>=3.8",
+]
+
+# Optional classifiers (for PyPI, not strictly needed for GitHub-only use)
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/youruser/your-repo"
+"Bug Tracker" = "https://github.com/youruser/your-repo/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/your_package_name"]
