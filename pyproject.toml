@@ -1,28 +1,24 @@
-# pyproject.toml
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "your-package-name"          # what appears on PyPI, etc.
+name = "RVDLM"           # <-- IMPORTANT: real project name, not "your-package-name"
 version = "0.1.0"
-description = "Short description of what this does"
+description = "Realized Volatility Dynamic Linear Models (RV-DLMs)"
 readme = "README.md"
 requires-python = ">=3.9"
 
-# Author info (optional but nice)
 authors = [
-  { name = "Patrick Woitschig", email = "patrick@example.com" }
+  { name = "Patrick Woitschig", email = "patrick.woitschig@duke.edu" }
 ]
 
-# Dependencies that get installed with your package
 dependencies = [
   "numpy",
   "pandas",
-  # "matplotlib>=3.8",
+  "scipy",
 ]
 
-# Optional classifiers (for PyPI, not strictly needed for GitHub-only use)
 classifiers = [
   "Programming Language :: Python :: 3",
   "License :: OSI Approved :: MIT License",
@@ -30,8 +26,10 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/youruser/your-repo"
-"Bug Tracker" = "https://github.com/youruser/your-repo/issues"
+"Homepage" = "https://github.com/PSW1998/Realized-Volatility-Dynamic-Linear-Model"
+"Bug Tracker" = "https://github.com/PSW1998/Realized-Volatility-Dynamic-Linear-Model/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/your_package_name"]
+# THIS tells hatch which packages to include in the wheel
+packages = ["src/RVDLM"]
+
