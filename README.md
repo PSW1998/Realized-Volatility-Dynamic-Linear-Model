@@ -27,5 +27,5 @@ pip install "git+https://github.com/PSW1998/Realized-Volatility-Dynamic-Linear-M
 
 An end-to-end example is provided as a Jupyter notebook:
 
-- [`examples/SPYExample.ipynb`](examples/SPY_Example.ipynb)  
+- [`examples/SPY_Example.ipynb`](examples/SPY_Example.ipynb)  
   Downloads daily SPY data from Yahoo Finance, constructs a Rogers–Satchell realized variance and precision series, tunes an RV–DLM via `tune_rvdlm_ohlc`, tunes a classical discount DLM via `grid_search_dlm`, and compares one-step-ahead predictive log-likelihoods.
