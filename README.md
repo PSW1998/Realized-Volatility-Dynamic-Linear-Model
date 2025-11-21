@@ -17,8 +17,6 @@ The core applied setting is S&P 500 sector ETFs with realized measures (e.g. Rog
 
 ## Installation
 
-### Option 1 – Install directly from GitHub (simple)
-
 You don’t need to clone the repo if you just want to use the package:
 
 ```bash
