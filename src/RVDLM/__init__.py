@@ -1,28 +1,32 @@
-# src/RVDLM/__init__.py
+"""
+RVDLM: Realized Volatility Dynamic Linear Models
 
-from importlib.metadata import version, PackageNotFoundError
+Companion code for RV–DLM paper.
+"""
 
+from importlib.metadata import PackageNotFoundError, version
+
+# Package version (if installed via pip); fallback for editable dev
 try:
     __version__ = version("RVDLM")
 except PackageNotFoundError:
     __version__ = "0.0.0"
 
-from .dynamic_gamma import DynamicGammaFilter  # or GammaF_Filter if that's the name
-from .rvdlm_univariate import (
-    combined_neg_loglike_univariate_lag1,
-    grid_search_univariate_lag1,
-    # plus anything else you defined there
-)
-from .tuning import tune_rvdlm_ohlc  # if you have it
-from .dlm_baseline import dlm_lag1_logpred, grid_search_dlm  # <-- NEW
+# Expose submodules at the top level
+from . import dynamic_gamma
+from . import rvdlm_univariate
+from . import tuning
+# If you added dlm_baseline.py:
+try:
+    from . import dlm_baseline  # optional, if file exists
+except ImportError:  # pragma: no cover
+    dlm_baseline = None
 
 __all__ = [
     "__version__",
-    "DynamicGammaFilter",
-    "combined_neg_loglike_univariate_lag1",
-    "grid_search_univariate_lag1",
-    "tune_rvdlm_ohlc",
-    "dlm_lag1_logpred",
-    "grid_search_dlm",
+    "dynamic_gamma",
+    "rvdlm_univariate",
+    "tuning",
+    "dlm_baseline",
 ]
 
